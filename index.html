@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">Jungle</a>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <h2 id="text"><span>It's time for a new</span><br>Adventure</h2>
+        <img src="images/bird1.png" id="bird1">
+        <img src="images/bird2.png" id="bird2">
+        <img src="images/forest.png" id="forest">
+
+        <a href="#" id="btn">Explore</a>
+
+        <img src="images/rocks.png" id="rocks">
+        <img src="images/water.png" id="water">
+    </section>
+
+    <div class="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque nihil modi fugiat assumenda voluptatibus. Ea illo minima culpa eaque nisi, qui inventore reprehenderit ut itaque blanditiis, omnis quo nihil rerum animi impedit officiis esse aliquid eligendi possimus vero asperiores quas magnam similique corporis. Repellat dolor saepe possimus cumque ullam, eos officiis rem iste facilis dolores pariatur laboriosam. Minima illo debitis praesentium deserunt vero doloremque nobis nesciunt, optio, quod, repellat facere! Est, natus adipisci! Fugit inventore sint magnam, praesentium, quis at minima, eius maxime voluptatum voluptatem repellat quas autem? Aliquam molestiae impedit architecto unde nesciunt, laudantium doloremque deleniti qui debitis quam. <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vitae ullam numquam facere minima voluptatum inventore, voluptates optio incidunt suscipit neque earum tenetur fuga sed sunt est ea ex? Non, vitae aliquid iusto reprehenderit dolore architecto nesciunt, laborum dolores ea corporis quia quis quas consequatur possimus. Inventore quis fugit laborum provident facilis delectus temporibus, culpa sequi voluptas soluta quam, quaerat veniam, error velit aut iusto quo quae praesentium debitis. Corporis animi nulla explicabo. Alias officiis, a consequatur cumque commodi corrupti porro. Officiis, id nobis ratione eius aliquid hic. Animi reprehenderit illo nihil expedita sit magni labore consequatur cupiditate ad qui?</p>
+    </div>
+
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -0.12 + 'px';
+            forest.style.top = value * 0.25 + 'px';
+            header.style.top = value * 0.5 + 'px';
+
+        })
+    </script>
+
+</body>
+</html>
